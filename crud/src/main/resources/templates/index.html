@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+<a href="/add">Add Student</a>
+    <div th:switch="${listOfStudents}">
+        <h2 th:case="null">No students</h2>
+        <div th:case="*">
+            <table>
+                <thead>
+                    <tr>
+                        <th>StudentId</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Subject</th>
+                        <th>Standard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="d:${listOfStudents}">
+                        <td th:text="${d.studentId}"></td>
+                        <td th:text="${d.studentName}"></td>
+                        <td th:text="${d.age}"></td>
+                        <td th:text="${d.subject}"></td>
+                        <td th:text="${d.standard}"></td>
+                    </tr>
+                </tbody>
+        </table>
+        </div>
+    </div>
+
+</body>
+</html>

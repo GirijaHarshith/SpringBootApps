@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+    <div>
+        <H3>Add Student Data</H3>
+        <form th:action="@{/add}" th:object="${students}" method="post">
+            <div>
+                <label for= "name">Name</label>
+                <input text id="name" name="name" placeholder="Enter Name">
+            </div>
+            <div>
+                <label for= "age">Age</label>
+                <input number id="age" name="age" placeholder="Enter Age">
+            </div>
+            <div>
+                <label for= "standard">Standard</label>
+                <input number id="standard" name="standard" placeholder="Enter Standard"> <!--number="${students.standard}"-->
+            </div>
+            <div>
+                <label for= "subject">Subject</label>
+                <input text id="subject" name="subject" placeholder="Enter subject">
+            </div>
+            <div>
+                <input type="submit" value="add">
+            </div>
+        </form>
+    </div>
+    </body>
+</html>
